@@ -16,10 +16,10 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid" id="container" style="display: none">
         <div class="row">
             <div class="col-md-12">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <nav class="navbar navbar-expand-lg navbar-light bg-info">
 
                     <a class="navbar-brand" href="#">
                         <img src="resources/images/logo.png" width="30" height="30" class="d-inline-block align-top"
@@ -33,7 +33,7 @@
                                 <a class="nav-link" href="index.html">Propriedades</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Quem somos</a>
+                                <a class="nav-link" href="quemsomos.html">Quem somos</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="contato.html">Contato</a>
@@ -64,26 +64,53 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <img id="imagemPropriedade" alt="Bootstrap Image Preview" src="" class="rounded img-fluid" />
             </div>
-            <div class="col-md-10">
+            <div class="col-md-9">
+                <div class="row">
                 <p>
                     Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
                 </p>
+                </div>
+                <div class="row">
+                    <dl>
+                        <dt>
+                            Description lists
+                        </dt>
+                        <dd>
+                            A description list is perfect for defining terms.
+                        </dd>
+                        <dt>
+                            Euismod
+                        </dt>
+                        <dd>
+                            Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
+                        </dd>
+                        <dd>
+                            Donec id elit non mi porta gravida at eget metus.
+                        </dd>
+                        <dt>
+                            Malesuada porta
+                        </dt>
+                        <dd>
+                            Etiam porta sem malesuada magna mollis euismod.
+                        </dd>
+                        <dt>
+                            Felis euismod semper eget lacinia
+                        </dt>
+                        <dd>
+                            Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                        </dd>
+                    </dl>
+                </div>  
+                <div class="row">
+                    <div id="googleMap" style="width:100%;height:250px;"></div>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-3">
-                 
-                <address>
-                     <strong>Twitter, Inc.</strong><br /> 795 Folsom Ave, Suite 600<br /> San Francisco, CA 94107<br /> <abbr title="Phone">P:</abbr> (123) 456-7890
-                </address>
-            </div>
-            <div class="col-md-9">
-            </div>
-        </div>
-
+        
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsT7-T5JsqtEVj_dwzu45ejQqBqxwcX5E&callback=myMap"></script>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -98,6 +125,7 @@
             crossorigin="anonymous"></script>
 
         <script src="resources/js/propriedade.js"></script>
+        <script src="resources/js/localizacao.js"></script>
 </body>
 
 </html>
