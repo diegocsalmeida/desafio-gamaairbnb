@@ -56,7 +56,6 @@ request.onload = function () {
       var link = document.createElement("a");
       link.href = "propriedade.html?id=" + contador;
       link.innerHTML = data[contador].name;
-      console.log(link);
       
       title.appendChild(link);
 

@@ -36,7 +36,7 @@ request.onload = function () {
 
       titulo.appendChild(small);
       
-
+      document.getElementById('container').style = "display :block";
       
       
   }
