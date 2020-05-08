@@ -13,9 +13,14 @@ request.onload = function () {
   var url = window.location.href; 
 
   var res = url.split('?'); 
-    	
+
 	if (res[1] === undefined) {
-        alert('página sem parâmetros.');
+        alert('Página sem parâmetros.');
+        window.location.href = "index.html";
+  }
+
+  if (res[1].split("=")[1] === 'null' || res[1].split("=")[1].length === 0){
+    window.location.href = "index.html";
   }
 
   if (res[1] !== undefined) {

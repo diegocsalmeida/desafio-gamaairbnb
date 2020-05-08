@@ -9,7 +9,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="resources/css/sistema.css">
+    
+        <link rel="stylesheet" href="resources/css/sistema.css">
 
 
     <title>Gama Airbnb</title>
@@ -41,11 +42,12 @@
                         </ul>
 
                         <ul class="navbar-nav ml-md-auto">
-                            <form class="form-inline">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Destino" />
-                                <button class="btn btn-primary my-2 my-sm-0" type="submit">
-                                    Pesquisar
-                                </button>
+
+                            <form autocomplete="off" action="#">
+                                <div class="autocomplete" style="width:300px;">
+                                    <input id="myInput" type="text" name="myCountry" placeholder="Pesquisa">
+                                </div>
+
                             </form>
                         </ul>
                     </div>
@@ -54,25 +56,25 @@
             </div>
         </div>
 
-        
-            <div class="jumbotron jumbotron">
-                <div class="container">
-                  <h1 class="display-4">Propriedades</h1>
-                  <p class="lead">As melhores e mais aconchegantes propriedades para locação disponíveis a sua escolha.</p>
-                </div>
-              </div>
-        
-
-        <div class="row" id="linhaCards">
-            
-        </div>
-        
-        <div class="row">
-            <div class="col-md-12">
-                
+        <div class="jumbotron jumbotron">
+            <div class="container">
+                <h1 class="display-4">Propriedades</h1>
+                <p class="lead">As melhores e mais aconchegantes propriedades para locação disponíveis a sua escolha.
+                </p>
             </div>
         </div>
-    
+
+
+        <div class="row" id="linhaCards">
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+
+            </div>
+        </div>
+
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -87,6 +89,7 @@
             crossorigin="anonymous"></script>
 
         <script src="resources/js/script.js"></script>
+        <script src="resources/js/autocomplete.js"></script>
 </body>
 
 </html>

@@ -41,11 +41,12 @@
                         </ul>
 
                         <ul class="navbar-nav ml-md-auto">
-                            <form class="form-inline">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Destino" />
-                                <button class="btn btn-primary my-2 my-sm-0" type="submit">
-                                    Pesquisar
-                                </button>
+
+                            <form autocomplete="off" action="#">
+                                <div class="autocomplete" style="width:300px;">
+                                  <input id="myInput" type="text" name="myCountry" placeholder="Pesquisa" >
+                                </div>
+                                
                             </form>
                         </ul>
                     </div>
@@ -71,7 +72,7 @@
 <p>Integer sollicitudin neque vel semper mattis. Pellentesque sit amet lobortis leo. Morbi imperdiet vitae est vel mattis. Aliquam non eros ac justo tempor congue. Aenean dapibus odio et velit efficitur auctor. Sed lacinia, diam sit amet ultricies volutpat, velit nisl mattis justo, a consectetur nulla orci vitae orci. Integer nunc neque, faucibus id est quis, ornare dictum tellus. Pellentesque aliquam est nec maximus pellentesque. Maecenas gravida velit a tincidunt rhoncus.</p>
             </div>
         </div>
-
+        
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -83,6 +84,8 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
+
+        <script src="resources/js/autocomplete.js"></script>
 </body>
 
 </html>
