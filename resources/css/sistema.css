@@ -82,6 +82,7 @@
     cursor: pointer;
     background-color: #fff; 
     border-bottom: 1px solid #d4d4d4; 
+    color: black;
   }
   
   /*when hovering an item:*/
