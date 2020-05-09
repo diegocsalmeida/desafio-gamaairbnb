@@ -77,6 +77,46 @@ request.onload = function () {
       // Adiciona o texto
       smallTime.innerHTML = "Tipo: " + data[contador].property_type;
 
+      var badge = document.createElement("span");
+      // Adiciona a classe
+      badge.className = "badge badge-primary";
+
+      switch (data[contador].property_type){
+        case "Casa":
+            badge.className = "badge badge-primary";
+            break;
+        case "Apartamento":
+            badge.className = "badge badge-warning";
+            break;
+        case "Chácara":
+            badge.className = "badge badge-info";
+            break;
+        case "Estúdio":
+            badge.className = "badge badge-success";
+            break;
+        case "Loft":
+            badge.className = "badge badge-dark";
+            break;
+        case "Quarto":
+            badge.className = "badge badge-light";
+            break;
+            
+
+        default:
+          badge.className = "badge badge-secondary";
+          break;
+
+      }
+
+
+      
+
+
+      // Adiciona o texto
+      badge.innerHTML = data[contador].property_type;
+
+
+
       // Montar o body
       column.appendChild(cardDeck);
       cardDeck.appendChild(card);
@@ -87,7 +127,7 @@ request.onload = function () {
       cardBody.appendChild(title);
       cardBody.appendChild(description);
       // Montar o footer
-      cardFooter.appendChild(smallTime);
+      cardFooter.appendChild(badge);
       // Montar as colunas      
       linhaCards.appendChild(column);
     }

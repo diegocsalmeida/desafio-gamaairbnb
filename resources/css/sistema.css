@@ -39,6 +39,11 @@
   display: flex;
 }
 
+.badge-light{
+  color: #ffffff;
+  background-color: #217b90;
+}
+
 /*** usado no auto complete ***/
   
   /*the container must be positioned relative:*/

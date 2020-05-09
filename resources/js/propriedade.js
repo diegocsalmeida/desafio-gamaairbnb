@@ -44,6 +44,8 @@ request.onload = function () {
       
       document.getElementById('container').style = "display :block";
       
+      var tipo = document.getElementById('tipoImovel');
+      tipo.innerHTML = data[id].property_type;
       
   }
 
