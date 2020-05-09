@@ -15,24 +15,28 @@ request.onload = function () {
       // Cria uma div
       var column = document.createElement("div");
       // Adiciona a classe - col-sm-6 col-md-4 col-lg-3
-      column.className = "col-sm-6 col-md-4 col-lg-3";
+      column.className = "col-sm-6 col-md-4 col-lg-3 item";
 
       // Cria uma div
-      var cardDesk = document.createElement("div");
+      var cardDeck = document.createElement("div");
       // Adiciona a classe
-      cardDesk.className = "card-desk";
+      cardDeck.className = "card-deck";
+      
 
       // Cria uma div
       var card = document.createElement("div");
       // Adiciona a classe
       card.className = "card";
+      //card.style = "width: 30rem; margin: 1.5rem 0.5rem;"
 
       // Cria uma imagem
-      var img = document.createElement("img");
+      //var img = document.createElement("img");
+      var img = document.createElement("div");
       // Adiciona a classe
-      img.className = "card-img-top";
+      img.className = "card-img-top card-image image-teste";
       // Adiciona a TAG source da imagem
-      img.src = data[contador].photo;
+      //img.src = data[contador].photo; esse valor é a photo
+      img.style.backgroundImage = "url("+data[contador].photo+")";
       // Adiciona a TAG alt da imagem, utilizando name
       img.alt = data[contador].name;
 
@@ -74,8 +78,8 @@ request.onload = function () {
       smallTime.innerHTML = "Tipo: " + data[contador].property_type;
 
       // Montar o body
-      column.appendChild(cardDesk);
-      cardDesk.appendChild(card);
+      column.appendChild(cardDeck);
+      cardDeck.appendChild(card);
       card.appendChild(img);
       card.appendChild(cardBody);
       card.appendChild(cardFooter);

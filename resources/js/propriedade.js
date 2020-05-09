@@ -1,6 +1,7 @@
 var request = new XMLHttpRequest();
 request.open('GET', 'https://api.sheety.co/30b6e400-9023-4a15-8e6c-16aa4e3b1e72', true);
-var data;
+let data;
+let preco;
 request.onload = function () {
   if (this.status >= 200 && this.status < 400) {
     // Success!
@@ -38,7 +39,7 @@ request.onload = function () {
       var small = document.createElement('small');
       small.style = "padding-left: 40px";
       small.innerHTML = "Por apenas R$ " + data[id].price + " ao dia.";
-
+      preco = data[id].price;
       titulo.appendChild(small);
       
       document.getElementById('container').style = "display :block";
@@ -53,3 +54,42 @@ request.onerror = function () {
 };
 
 request.send();
+
+function parseDate(str) {
+  var mdy = str.split('-');
+  console.log(mdy);
+  return new Date(mdy[2], mdy[0]-1, mdy[1]);
+}
+
+function datediff(first, second) {
+  // Take the difference between the dates and divide by milliseconds per day.
+  // Round to nearest whole number to deal with DST.
+  return Math.round((second-first)/(1000*60*60*24));
+}
+
+function calcularDiarias(){
+  let entrada = document.getElementById("dataEntrada").value;
+  let saida = document.getElementById("dataSaida").value; 
+
+  let noites = Math.round((new Date(saida) - new Date(entrada))/(1000*60*60*24));
+
+  console.log(entrada);
+  console.log(saida);
+
+  var a = new Date(entrada);
+  var b = new Date(entrada);
+
+
+  if( a > b){
+    console.log('Entrada maior');
+  } else if ( a === b ){
+    console.log('Iguais');
+  } else {
+    console.log('Entrada menor');
+  }
+
+  document.getElementById('total').innerHTML = `R$ ${(noites * preco)}`
+
+}
+
+

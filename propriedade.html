@@ -11,6 +11,7 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="resources/css/sistema.css">
 
+    <link rel="icon" href="resources/images/logo.png">
 
     <title>Gama Airbnb</title>
 </head>
@@ -19,7 +20,7 @@
     <div class="container-fluid" id="container" style="display: none">
         <div class="row">
             <div class="col-md-12">
-                <nav class="navbar navbar-expand-lg navbar-light bg-info">
+                <nav class="navbar navbar-expand-lg navbar bg-dark">
 
                     <a class="navbar-brand" href="#">
                         <img src="resources/images/logo.png" width="30" height="30" class="d-inline-block align-top"
@@ -59,16 +60,46 @@
             <div class="col-md-12">
                 <div class="page-header">
                     <h1 id="titulo">
-                        <small id="mensagemValor">Interface Builder for Bootstrap</small>
+                        <small id="mensagemValor">Preço por dia</small>
                     </h1>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-3">
-                <img id="imagemPropriedade" alt="Bootstrap Image Preview" src="" class="rounded img-fluid" />
+                
+                    <img id="imagemPropriedade" alt="Bootstrap Image Preview" src="" class="rounded img-fluid" />
+                
+                    <div class="reserva-content">
+                        <h6> Reserva </h5>
+                        <form role="form" id="form_reserva" class="form-inline">
+                            <div class="form-group">
+                                <label for="dataEntrada">
+                                    Entrada
+                                </label>
+                                <input class="form-control" type="date" id="dataEntrada" >
+                            </div>
+                            <div class="form-group">
+                                <label for="dataSaida">
+                                    Saida
+                                </label>
+                                <input class="form-control" type="date" id="dataSaida" onfocusout="calcularDiarias()">
+                            </div>
+                        </form>
+                        
+                        <div class="total-value">
+                            <label for="total">
+                                Total
+                            </label>
+                            <p id="total">R$ 0</p>
+                        </div>
+                    </div>
+                
             </div>
             <div class="col-md-9">
+                
+            </br>
+
                 <div class="row">
                     <p>
                         Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien
@@ -84,46 +115,31 @@
                 <div class="row">
                     <dl>
                         <dt>
-                            Description lists
+                            Comodidades
                         </dt>
                         <dd>
-                            A description list is perfect for defining terms.
+                            WiFi - Cozinha - Piscina - TV - Estacionamento
                         </dd>
                         <dt>
-                            Euismod
+                            Quantidade de Hóspedes
                         </dt>
                         <dd>
-                            Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
-                        </dd>
-                        <dd>
-                            Donec id elit non mi porta gravida at eget metus.
+                            15 hóspedes.
                         </dd>
                         <dt>
-                            Malesuada porta
+                            Regras da Casa 
                         </dt>
                         <dd>
-                            Etiam porta sem malesuada magna mollis euismod.
-                        </dd>
-                        <dt>
-                            Felis euismod semper eget lacinia
-                        </dt>
-                        <dd>
-                            Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa
-                            justo sit amet risus.
+                            Proibido fumar - Permite animais de estimação
                         </dd>
                     </dl>
                 </div>
                 <div class="row">
                     <div id="googleMap" style="width:100%;height:300px;"></div>
                 </div>
-                <div class="row">
-                    DIEGO
-                </div>
 
             </div>
         </div>
-
-
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -140,47 +156,43 @@
         <script src="resources/js/propriedade.js"></script>
         <script src="resources/js/autocomplete.js"></script>
         <script>
-
-
             function myMap() {
-                fetch('https://raw.githubusercontent.com/kelvins/Municipios-Brasileiros/master/json/municipios.json')
-                    .then(
-                        function (response) {
-                            if (response.status !== 200) {
-                                console.log('Looks like there was a problem. Status Code: ' +
-                                    response.status);
-                                return;
-                            }
+                    fetch('https://raw.githubusercontent.com/kelvins/Municipios-Brasileiros/master/json/municipios.json')
+                        .then(
+                            function (response) {
+                                if (response.status !== 200) {
+                                    console.log('Looks like there was a problem. Status Code: ' +
+                                        response.status);
+                                    return;
+                                }
 
-                            response.json().then(function (data) {
-                                let obj = data[parseInt(Math.random() * (5570 - 0) + 0)];
+                                response.json().then(function (data) {
+                                    let obj = data[parseInt(Math.random() * (5570 - 0) + 0)];
 
-                                var mapProp = {
-                                    center: new google.maps.LatLng(obj.latitude, obj.longitude),
-                                    zoom: 14,
-                                };
+                                    var mapProp = {
+                                        center: new google.maps.LatLng(obj.latitude, obj.longitude),
+                                        zoom: 14,
+                                    };
 
-                                var myLatLng = { lat: obj.latitude, lng: obj.longitude };
+                                    var myLatLng = { lat: obj.latitude, lng: obj.longitude };
 
-                                var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-                                var marker = new google.maps.Marker({
-                                    position: myLatLng,
-                                    map: map,
-                                    title: 'Localização'
+                                    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+                                    var marker = new google.maps.Marker({
+                                        position: myLatLng,
+                                        map: map,
+                                        title: 'Localização'
+                                    });
+
                                 });
-
-                            });
-                        }
-                    )
-                    .catch(function (err) {
-                        console.log('Fetch Error :-S', err);
-                    });
+                            }
+                        )
+                        .catch(function (err) {
+                            console.log('Fetch Error :-S', err);
+                        });
             }
         </script>
 
-        <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDh2WOqElH2PsijZASAhMN92hDQ5UYdXC8&callback=myMap"></script>
-
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_ClKQsms1gk3AyeKA70PYpDyU2wqrSIg&callback=myMap"></script>
 
 </body>
 
